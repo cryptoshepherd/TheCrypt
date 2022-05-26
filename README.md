@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  The Crypt (WORK IN PROGRESS)
+  The Crypt
   <br>
 </h1>
 
@@ -38,23 +38,24 @@ give me inputs and suggestion on how to improve the security further
 
 ## How To Use
 
-First of all, you will need to generate a Salt as well a master password hash. 
+First of all, you will need to generate a Salt, a master password hash is not strictly needed right now
 
 ```bash
 python pwd_master_hash_gen.py
 ```
 
-you will get printed out your salt as well the hash based on your master password input. You have to copy and paste salt and hash into
-the pwd_master.py, respectively b='' and master_password_hash = "" 
+you will get printed out your salt as well the hash based on your master password input. You have to copy and paste salt into
+the pwd_master.py, respectively b='' 
 
 you are now ready to run the main.py. A TheCrypt.db file will be created, keep it safe even if passwords are encrypted before be written into the db of course
 
 > **Note**
-> Loosing the first generated salt and/or master password hash will transform your database in a garbage of useless bytes unless you are 
-> able to crack it ... all the best
+> Loosing or forget the first generated salt and/or master password hash will transform your database in a garbage of useless bytes unless you are 
+> able to crack it ...
 
 ## To Do
 
+1) Implement a more secure approach by loading salt and hash from ex: an external usb drive
 
 ## Credits
 

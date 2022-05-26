@@ -154,22 +154,15 @@ class App(tk.Tk):
 
     def validate_pwd_custom(self):
         user = self.user_entry_custom.get()
-        print(user)
         passwd = self.password_entry_custom.get()
-        print(passwd)
         url = self.url_entry_custom.get()
-        print(url)
         if user != "":
-            # print(user)
             if passwd != "":
-                # print(passwd)
                 data = pwd_strenght_check.password_check(passwd)
                 if data:
                     master_password_input = askstring("Master Password", "Please provide the master password", show='*')
-                    print(master_password_input)
                     if len(master_password_input) > 0:
                         enc_pwd = pwd_master.encrypt_password(master_password_input, data)
-                        print(enc_pwd)
                         Session = sessionmaker(bind=engine)
                         session = Session()
                         new_entry = Crypt(username=user, password=enc_pwd, url=url)
